@@ -2,11 +2,17 @@
 <html>
 <body>
 
-{% if greeting %}
-  <h1>Hello</h1>
-{% endif %} 
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.last %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul> 
 
-<p>In views.py you can see what the greeting variable looks like.</p>
+<p>In views.py you can see what the fruits object looks like.</p>
 
 </body>
-</html>
+</html> 
