@@ -24,7 +24,7 @@ def main(request):
   return HttpResponse(template.render())
 
 def testing(request):
-  mydata = Member.objects.filter(firstname='Denis').values() | Member.objects.filter(firstname='Goodluck').values()
+  mydata = Member.objects.filter(firstname__startswith='E').values()
   template = loader.get_template('template.html')
   context = {
     'mymembers': mydata,
